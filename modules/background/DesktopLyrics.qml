@@ -39,7 +39,7 @@ Item {
 
     readonly property bool shouldHide: (autoHideFullscreen && hasFullscreen) || (autoHideTiled && hasTiled)
 
-    property bool hasLyrics: Lyrics.hasLyrics
+    readonly property bool hasLyrics: Lyrics.hasLyrics
     property int currentLyricIndex: -1
     readonly property bool isCurrentActive: currentLyricIndex >= 0
 
@@ -54,15 +54,6 @@ Item {
     property real targetPrevY: targetCenterY - prevLyricItem.height - lyricSpacing
     property real targetNextY: targetCenterY + lyricContainer.height + lyricSpacing
     property real startNextY: targetNextY + nextLyricItem.height + lyricSpacing
-
-    function reloadTrack() {
-        const p = Players.active;
-        if (p) {
-            Lyrics.setTrack(p.trackArtist, p.trackTitle, p.trackAlbum, p.length);
-        } else {
-            Lyrics.clearTrack();
-        }
-    }
 
     function forceUpdate() {
         if (Lyrics.hasLyrics) {
@@ -104,9 +95,17 @@ Item {
         }
     }
 
+    // The overlay can be created after Players already loaded the lyrics (async
+    // Loader, toggling overlay mode, enabling the feature mid-track). Acquire
+    // the shared lyrics consumer slot and populate the current line
+    // immediately instead of waiting for the playback timer, which does not
+    // run while paused.
     Component.onCompleted: {
-        root.reloadTrack();
+        Players.acquireLyrics();
+        root.forceUpdate();
     }
+
+    Component.onDestruction: Players.releaseLyrics()
 
     implicitWidth: 350 * root.lyricsScale
     implicitHeight: 180 * root.lyricsScale
@@ -187,26 +186,11 @@ Item {
     }
 
     Connections {
-        function onActiveChanged() {
-            root.reloadTrack();
+        function onLyricsChanged() {
+            root.forceUpdate();
         }
 
-        target: Players
-    }
-
-    Connections {
-        function onPostTrackChanged() {
-            root.reloadTrack();
-        }
-
-        ignoreUnknownSignals: true
-
-        target: Players.active
-    }
-
-    Connections {
         function onHasLyricsChanged() {
-            root.hasLyrics = Lyrics.hasLyrics;
             root.forceUpdate();
         }
 
