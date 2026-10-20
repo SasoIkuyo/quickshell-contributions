@@ -3,7 +3,6 @@ pragma ComponentBehavior: Bound
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Widgets
 import Caelestia
 import Caelestia.Config
 import Caelestia.I18n
@@ -73,7 +72,7 @@ Item {
         tabs: root.dashboardTabs
     }
 
-    ClippingRectangle {
+    ClipRect {
         id: viewWrapper
 
         anchors.top: tabs.bottom
@@ -90,7 +89,7 @@ Item {
 
             readonly property int currentIndex: root.screenState.dashboardTab
             readonly property Item currentItem: {
-                repeater.count; // Trigger update on count change
+                CUtils.dependency(repeater.count); // Trigger update on count change
                 return repeater.itemAt(currentIndex);
             }
 

@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import Quickshell
 import Quickshell.Hyprland
 import Caelestia.Config
+import Caelestia.State
 import Caelestia.Services
 import qs.components
 import qs.components.controls
@@ -22,7 +23,7 @@ Item {
 
     property real lyricsScale: Config.background.desktopLyrics.scale
     readonly property bool bgEnabled: Config.background.desktopLyrics.background.enabled
-    readonly property bool blurEnabled: bgEnabled && Config.background.desktopLyrics.background.blur && !GameMode.enabled
+    readonly property bool blurEnabled: bgEnabled && Config.background.desktopLyrics.background.blur && !RuntimeState.gameMode
     readonly property bool invertColors: Config.background.desktopLyrics.invertColors
     readonly property bool useLightSet: Colours.light ? !invertColors : invertColors
     readonly property color safePrimary: useLightSet ? Colours.palette.m3primaryContainer : Colours.palette.m3primary
