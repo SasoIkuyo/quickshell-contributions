@@ -8,7 +8,7 @@ msgstr "Project-Id-Version: caelestia-shell\nLanguage: es\nPO-Revision-Date: 202
 #, qt-format
 msgctxt "selected file"
 msgid "\"%1\" selected"
-msgstr ""
+msgstr "\"%1\" seleccionado"
 
 #: components/filedialog/DialogButtons.qml
 msgctxt "file filter"
@@ -18,14 +18,14 @@ msgstr "Filtro:"
 #: components/filedialog/DialogButtons.qml
 msgctxt "file filter separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #. TRANSLATORS: %1 = filter label, %2 = file patterns
 #: components/filedialog/DialogButtons.qml
 #, qt-format
 msgctxt "file filter label and patterns"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: components/filedialog/DialogButtons.qml
 msgctxt "button"
@@ -114,11 +114,11 @@ msgstr "Escritorio"
 
 #: modules/bar/popouts/AudioPopout.qml
 msgid "Stop showing hidden devices"
-msgstr ""
+msgstr "No mostrar dispositivos ocultos"
 
 #: modules/bar/popouts/AudioPopout.qml modules/nexus/pages/AudioPage.qml
 msgid "Show hidden devices"
-msgstr ""
+msgstr "Mostrar dispositivos ocultos"
 
 #: modules/bar/popouts/AudioPopout.qml modules/nexus/PageRegistry.qml
 #: modules/nexus/pages/AudioPage.qml
@@ -131,11 +131,11 @@ msgstr "Dispositivo de salida"
 
 #: modules/bar/popouts/AudioPopout.qml modules/nexus/common/AudioDeviceList.qml
 msgid "Show"
-msgstr ""
+msgstr "Mostrar"
 
 #: modules/bar/popouts/AudioPopout.qml modules/nexus/common/AudioDeviceList.qml
 msgid "Hide"
-msgstr ""
+msgstr "Ocultar"
 
 #: modules/bar/popouts/AudioPopout.qml
 msgid "Input device"
@@ -178,7 +178,7 @@ msgstr[1] "%n min"
 #: modules/bar/popouts/Battery.qml
 msgctxt "duration component separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: modules/bar/popouts/Battery.qml
 #, qt-format
@@ -260,7 +260,7 @@ msgstr "Limitación de XKB: se permiten como máximo 4 distribuciones"
 #, qt-format
 msgctxt "keyboard layout language and code"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: modules/bar/popouts/kblayout/KbLayoutModel.qml
 msgid "Keyboard layout limit"
@@ -275,7 +275,7 @@ msgstr "XKB solo admite 4 distribuciones a la vez"
 #, qt-format
 msgctxt "keyboard layout code and name"
 msgid "%1 - %2"
-msgstr ""
+msgstr "%1 - %2"
 
 #: modules/bar/popouts/Network.qml
 msgid "Wireless"
@@ -514,7 +514,7 @@ msgstr "Totales"
 #: modules/dashboard/performance/NetworkCard.qml
 #, qt-format
 msgid "↓%1 ↑%2"
-msgstr ""
+msgstr "↓%1 ↑%2"
 
 #: modules/dashboard/performance/StorageCard.qml
 msgctxt "storage used"
@@ -572,7 +572,7 @@ msgstr "Hoy"
 #, qt-format
 msgctxt "min/max temperature"
 msgid "%1 / %2"
-msgstr ""
+msgstr "%1 / %2"
 
 #: modules/dashboard/Wrapper.qml
 msgid "Select a profile picture"
@@ -2622,122 +2622,122 @@ msgstr "%1 en el monitor %2 en %3, %4"
 #, qt-format
 msgctxt "temperature"
 msgid "%1°"
-msgstr ""
+msgstr "%1°"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgctxt "temperature"
 msgid "%1°F"
-msgstr ""
+msgstr "%1°F"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgctxt "temperature"
 msgid "%1 K"
-msgstr ""
+msgstr "%1 K"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgctxt "temperature"
 msgid "%1°C"
-msgstr ""
+msgstr "%1°C"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 B"
-msgstr ""
+msgstr "%1 B"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 KB"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 MB"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 TB"
-msgstr ""
+msgstr "%1 TB"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 KiB"
-msgstr ""
+msgstr "%1 KiB"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 MiB"
-msgstr ""
+msgstr "%1 MiB"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 GiB"
-msgstr ""
+msgstr "%1 GiB"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 TiB"
-msgstr ""
+msgstr "%1 TiB"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 B/s"
-msgstr ""
+msgstr "%1 B/s"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 KB/s"
-msgstr ""
+msgstr "%1 KB/s"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 MB/s"
-msgstr ""
+msgstr "%1 MB/s"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 GB/s"
-msgstr ""
+msgstr "%1 GB/s"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 TB/s"
-msgstr ""
+msgstr "%1 TB/s"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 KiB/s"
-msgstr ""
+msgstr "%1 KiB/s"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 MiB/s"
-msgstr ""
+msgstr "%1 MiB/s"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 GiB/s"
-msgstr ""
+msgstr "%1 GiB/s"
 
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgid "%1 TiB/s"
-msgstr ""
+msgstr "%1 TiB/s"
 
 #. TRANSLATORS: %1 = used amount, %2 = total amount with unit
 #: plugin/src/Caelestia/I18n/Units.qml
 #, qt-format
 msgctxt "used / total amount"
 msgid "%1 / %2"
-msgstr ""
+msgstr "%1 / %2"
 
 #: services/Audio.qml
 msgctxt "unknown audio stream"
@@ -2854,7 +2854,7 @@ msgstr "En reproducción"
 #, qt-format
 msgctxt "track artist and title"
 msgid "%1 - %2"
-msgstr ""
+msgstr "%1 - %2"
 
 #: services/VPN.qml
 msgid "VPN connection failed"
@@ -2914,7 +2914,7 @@ msgstr "Se requiere autenticación VPN"
 #, qt-format
 msgctxt "vpn name and reason"
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: services/VPN.qml
 msgid "Unknown error"
@@ -3034,13 +3034,13 @@ msgstr "Desconocido"
 #: utils/Strings.qml
 #, qt-format
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #. TRANSLATORS: joins uptime components, e.g. "2 days, 3 hours"
 #: utils/SysInfo.qml
 msgctxt "uptime component separator"
 msgid ", "
-msgstr ""
+msgstr ", "
 
 #: utils/SysInfo.qml
 #, qt-plural-format
@@ -3053,8 +3053,8 @@ msgstr[1] "%n minutos"
 #, qt-plural-format, c-format
 msgid "Config loaded with %n issue."
 msgid_plural "Config loaded with %n issues."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Se cargó la configuración con %n problema."
+msgstr[1] "Se cargó la configuración con %n problemas."
 
 #: plugin/src/Caelestia/Config/rootnodes.cpp
 msgid "Config loaded successfully!"

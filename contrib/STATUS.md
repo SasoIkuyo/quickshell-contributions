@@ -7,7 +7,7 @@ This branch separates changes developed in Caelestia ES from personal desktop se
 - Audio: hide output devices and microphones by stable node name, restore them from “Show hidden devices”, and skip hidden outputs when cycling. Hiding never disconnects or mutes a device. Preferences are saved in the user's state directory.
 - Weather: search cities through Open-Meteo, choose a result, save its coordinates, or return to automatic IP location. Older search responses cannot replace newer results.
 - Rendering: avoid the extra full-screen layer when visualizer blur is disabled, upload the data texture only for the GPU renderer, and cap decorative visualizer animation at 30 fps. Hidden media panels release their audio-analysis references.
-- Translation: register a native Spanish gettext catalog. 700 entries are translated; 40 remain untranslated. Terminology still needs a translation review. Explicit English uses source strings without requiring a catalog.
+- Translation: register a native Spanish gettext catalog. All 740 entries are translated. Terminology still needs a translation review. Explicit English uses source strings without requiring a catalog.
 
 `experimental-updater/` preserves the Arch/paru updater for review. It is not connected to this shell's page registry. It needs broader testing before an upstream proposal. The complete integrated version is on the Caelestia ES branch.
 
