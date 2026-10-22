@@ -20,18 +20,17 @@ ColumnLayout {
     implicitWidth: Math.max(300, _isSidebarOpen ? Tokens.sizes.sidebar.width - Tokens.padding.extraLargeIncreased : 0)
     spacing: Tokens.spacing.medium
 
-    ButtonGroup {
-        id: sinks
-    }
-
-    ButtonGroup {
-        id: sources
+    IconTextButton {
+        Layout.fillWidth: true
+        text: Audio.showHiddenDevices ? Tr.tr("Stop showing hidden devices") : Tr.tr("Show hidden devices")
+        icon: Audio.showHiddenDevices ? "visibility_off" : "visibility"
+        onClicked: Audio.showHiddenDevices = !Audio.showHiddenDevices
     }
 
     StyledText {
         Layout.topMargin: Tokens.padding.medium
         Layout.leftMargin: Tokens.padding.small
-        text: qsTr("Audio")
+        text: Tr.tr("Audio")
         font.weight: 500
     }
 
@@ -52,23 +51,28 @@ ColumnLayout {
             spacing: Tokens.spacing.medium
 
             StyledText {
-                text: qsTr("Output device")
+                text: Tr.tr("Output device")
                 font: Tokens.font.body.builders.medium.weight(Font.Medium).build()
             }
 
             Repeater {
-                model: Audio.sinks
+                model: Audio.sinks.filter(node => Audio.showHiddenDevices || !Audio.isDeviceHidden(node))
 
-                StyledRadioButton {
+                RowLayout {
                     id: outputControl
-
                     required property PwNode modelData
-
                     Layout.fillWidth: true
-                    ButtonGroup.group: sinks
-                    checked: Audio.sink?.id === modelData.id
-                    onClicked: Audio.setAudioSink(modelData)
-                    text: modelData.description
+                    StyledRadioButton {
+                        Layout.fillWidth: true
+                        checked: Audio.sink?.id === outputControl.modelData.id
+                        onClicked: Audio.setAudioSink(outputControl.modelData)
+                        text: outputControl.modelData.description
+                    }
+                    IconTextButton {
+                        text: Audio.isDeviceHidden(outputControl.modelData) ? Tr.tr("Show") : Tr.tr("Hide")
+                        icon: Audio.isDeviceHidden(outputControl.modelData) ? "visibility" : "visibility_off"
+                        onClicked: Audio.toggleDeviceHidden(outputControl.modelData)
+                    }
                 }
             }
         }
@@ -91,23 +95,28 @@ ColumnLayout {
             spacing: Tokens.spacing.medium
 
             StyledText {
-                text: qsTr("Input device")
+                text: Tr.tr("Input device")
                 font: Tokens.font.body.builders.medium.weight(Font.Medium).build()
             }
 
             Repeater {
-                model: Audio.sources
+                model: Audio.sources.filter(node => Audio.showHiddenDevices || !Audio.isDeviceHidden(node))
 
-                StyledRadioButton {
+                RowLayout {
                     id: inputControl
-
                     required property PwNode modelData
-
                     Layout.fillWidth: true
-                    ButtonGroup.group: sources
-                    checked: Audio.source?.id === modelData.id
-                    onClicked: Audio.setAudioSource(modelData)
-                    text: modelData.description
+                    StyledRadioButton {
+                        Layout.fillWidth: true
+                        checked: Audio.source?.id === inputControl.modelData.id
+                        onClicked: Audio.setAudioSource(inputControl.modelData)
+                        text: inputControl.modelData.description
+                    }
+                    IconTextButton {
+                        text: Audio.isDeviceHidden(inputControl.modelData) ? Tr.tr("Show") : Tr.tr("Hide")
+                        icon: Audio.isDeviceHidden(inputControl.modelData) ? "visibility" : "visibility_off"
+                        onClicked: Audio.toggleDeviceHidden(inputControl.modelData)
+                    }
                 }
             }
         }
@@ -115,7 +124,7 @@ ColumnLayout {
 
     StyledText {
         Layout.topMargin: Tokens.spacing.medium
-        text: Audio.muted ? qsTr("Volume (Muted)") : qsTr("Volume (%1%)").arg(Math.round(Audio.volume * 100))
+        text: Audio.muted ? Tr.tr("Volume (Muted)") : Tr.tr("Volume (%1%)").arg(Math.round(Audio.volume * 100))
         font: Tokens.font.body.builders.medium.weight(Font.Medium).build()
     }
 
@@ -146,7 +155,7 @@ ColumnLayout {
         inactiveColour: Colours.palette.m3primaryContainer
         inactiveOnColour: Colours.palette.m3onPrimaryContainer
         verticalPadding: Tokens.padding.small
-        text: qsTr("Open settings")
+        text: Tr.tr("Open settings")
         icon: "settings"
 
         onClicked: root.popouts.detachRequested("audio")
