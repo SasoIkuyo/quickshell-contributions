@@ -130,7 +130,6 @@ PageBase {
                     spacing: Tokens.spacing.medium
 
                     IconImage {
-                        asynchronous: true
                         implicitSize: 32
                         source: Quickshell.iconPath(modelData.icon || "package-x-generic", "package-x-generic")
                     }
