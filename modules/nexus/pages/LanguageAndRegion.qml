@@ -59,6 +59,8 @@ PageBase {
         }
     ]
 
+    Component.onDestruction: LocationSearch.clear()
+
     title: Tr.tr("Language & region")
 
     ColumnLayout {
@@ -78,26 +80,31 @@ PageBase {
             last: true
             label: Tr.tr("UI language")
             subtext: Tr.tr("The language used in the shell UI")
-            active: menuItems.find(i => i.modelData === Tr.language) ?? autoLang
+            active: menuItems.find(i => i.value === GlobalConfig.general.language) ?? autoLang
             onSelected: item => {
-                Tr.language = item.modelData ?? ""; // qmllint disable missing-property
+                GlobalConfig.general.language = item.value;
+                GlobalConfig.save();
             }
 
-            menuItems: [autoLang, ...langItems.instances]
+            menuItems: [autoLang, englishLang, ...langItems.instances]
 
             MenuItem {
                 id: autoLang
 
                 text: Tr.tr("Auto")
+                value: ""
             }
+
+            MenuItem { id: englishLang; text: "English"; value: "en" }
 
             Variants {
                 id: langItems
 
-                model: Tr.supportedLanguages
+                model: Tr.supportedLanguages.filter(language => language !== "en")
 
                 MenuItem {
                     required property string modelData
+                    value: modelData
 
                     text: {
                         const locale = Qt.locale(modelData);
@@ -112,41 +119,81 @@ PageBase {
             text: Tr.tr("Weather")
         }
 
-        // Placeholder until the map-based location picker lands
         ConnectedRect {
             Layout.fillWidth: true
             first: true
             last: true
-            implicitHeight: comingSoon.implicitHeight + Tokens.padding.extraLarge * 2
+            implicitHeight: locationSettings.implicitHeight + Tokens.padding.medium * 2
 
             ColumnLayout {
-                id: comingSoon
-
-                anchors.centerIn: parent
-                width: parent.width - Tokens.padding.largeIncreased * 2
-                spacing: Tokens.padding.extraSmall
-
-                MaterialIcon {
-                    Layout.alignment: Qt.AlignHCenter
-                    text: "map"
-                    color: Colours.palette.m3outlineVariant
-                    fontStyle: Tokens.font.icon.extraLarge
-                }
-
-                StyledText {
-                    Layout.alignment: Qt.AlignHCenter
-                    text: Tr.tr("Location picker coming soon")
-                    color: Colours.palette.m3outlineVariant
-                    font: Tokens.font.title.small
-                }
+                id: locationSettings
+                x: Tokens.padding.medium
+                y: Tokens.padding.medium
+                width: parent.width - Tokens.padding.medium * 2
+                spacing: Tokens.spacing.medium
 
                 StyledText {
                     Layout.fillWidth: true
-                    horizontalAlignment: Text.AlignHCenter
+                    text: Tr.tr("Current location") + ": " + (Weather.city || GlobalConfig.services.weatherLocation || Tr.tr("Automatic"))
+                    textFormat: Text.PlainText
                     wrapMode: Text.WordWrap
-                    text: Tr.tr("Choose your weather location on a map in a future update")
-                    color: Colours.palette.m3outlineVariant
+                }
+                StyledText {
+                    Layout.fillWidth: true
+                    text: Tr.tr("This location is used for the weather forecast.")
                     font: Tokens.font.body.small
+                    color: Colours.palette.m3outline
+                    wrapMode: Text.WordWrap
+                }
+                IconTextButton {
+                    text: Tr.tr("Automatic location (IP)")
+                    icon: "my_location"
+                    onClicked: {
+                        LocationSearch.clear();
+                        Weather.useAutomaticLocation();
+                    }
+                }
+                RowLayout {
+                    Layout.fillWidth: true
+                    StyledTextField {
+                        id: citySearch
+                        Layout.fillWidth: true
+                        placeholderText: Tr.tr("City name…")
+                        onAccepted: LocationSearch.search(text)
+                    }
+                    IconTextButton {
+                        text: LocationSearch.loading ? Tr.tr("Searching…") : Tr.tr("Search")
+                        icon: "search"
+                        enabled: !LocationSearch.loading
+                        onClicked: LocationSearch.search(citySearch.text)
+                    }
+                }
+                StyledText {
+                    Layout.fillWidth: true
+                    visible: LocationSearch.errorText.length > 0
+                    text: LocationSearch.errorText
+                    color: Colours.palette.m3error
+                    wrapMode: Text.WordWrap
+                }
+                Repeater {
+                    model: LocationSearch.results
+                    delegate: ColumnLayout {
+                        id: placeRow
+                        required property var modelData
+                        Layout.fillWidth: true
+                        spacing: Tokens.spacing.extraSmall
+                        StyledText {
+                            Layout.fillWidth: true
+                            text: [placeRow.modelData.name, placeRow.modelData.admin1, placeRow.modelData.country].filter(Boolean).join(", ")
+                            textFormat: Text.PlainText
+                            wrapMode: Text.WordWrap
+                        }
+                        IconTextButton {
+                            text: GlobalConfig.services.weatherLocation === placeRow.modelData.latitude + "," + placeRow.modelData.longitude ? Tr.tr("Selected") : Tr.tr("Select this city")
+                            icon: "location_on"
+                            onClicked: Weather.setLocation(placeRow.modelData.latitude, placeRow.modelData.longitude, placeRow.modelData.name)
+                        }
+                    }
                 }
             }
         }
