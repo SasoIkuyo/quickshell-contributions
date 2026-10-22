@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: caelestia-shell\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-10-22 09:34-0300\n"
+"POT-Creation-Date: 2026-10-22 09:44-0300\n"
 "PO-Revision-Date: 2026-10-22 00:00-0300\n"
 "Last-Translator: Caelestia ES contributors\n"
 "Language-Team: Spanish\n"
@@ -108,8 +108,7 @@ msgstr "Modo de juego habilitado"
 
 #: daemons/GameMode.qml
 msgid "Disabled Hyprland animations, blur, gaps and shadows"
-msgstr ""
-"Animaciones, desenfoques, espacios y sombras de Hyprland deshabilitados."
+msgstr "Animaciones, desenfoques, espacios y sombras de Hyprland deshabilitados."
 
 #: daemons/GameMode.qml
 msgid "Game mode disabled"
@@ -299,8 +298,7 @@ msgstr "Red desconocida"
 
 #: modules/bar/popouts/WirelessPassword.qml
 msgid "Connection failed. Please check your password and try again."
-msgstr ""
-"La conexión falló. Por favor verifique su contraseña e inténtelo nuevamente."
+msgstr "La conexión falló. Por favor verifique su contraseña e inténtelo nuevamente."
 
 #: modules/bar/popouts/WirelessPassword.qml modules/nexus/pages/NetworkPage.qml
 msgid "Connecting..."
@@ -610,8 +608,7 @@ msgstr "Vibrante"
 
 #: modules/launcher/services/M3Variants.qml
 msgid "A high chroma palette. The primary palette's chroma is at maximum."
-msgstr ""
-"Una paleta de alto croma. El croma de la paleta principal está al máximo."
+msgstr "Una paleta de alto croma. El croma de la paleta principal está al máximo."
 
 #: modules/launcher/services/M3Variants.qml
 msgctxt "M3 scheme variant name"
@@ -620,9 +617,7 @@ msgstr "Mancha tonal"
 
 #: modules/launcher/services/M3Variants.qml
 msgid "Default for Material theme colours. A pastel palette with a low chroma."
-msgstr ""
-"Valor predeterminado para los colores del tema Material. Una paleta de "
-"colores pastel con un croma bajo."
+msgstr "Valor predeterminado para los colores del tema Material. Una paleta de colores pastel con un croma bajo."
 
 #: modules/launcher/services/M3Variants.qml
 msgctxt "M3 scheme variant name"
@@ -630,12 +625,8 @@ msgid "Expressive"
 msgstr "Expresivo"
 
 #: modules/launcher/services/M3Variants.qml
-msgid ""
-"A medium chroma palette. The primary palette's hue is different from the "
-"seed colour, for variety."
-msgstr ""
-"Una paleta cromática media. El tono de la paleta primaria es diferente del "
-"color de la semilla, por variedad."
+msgid "A medium chroma palette. The primary palette's hue is different from the seed colour, for variety."
+msgstr "Una paleta cromática media. El tono de la paleta primaria es diferente del color de la semilla, por variedad."
 
 #: modules/launcher/services/M3Variants.qml
 msgctxt "M3 scheme variant name"
@@ -643,12 +634,8 @@ msgid "Fidelity"
 msgstr "Fidelidad"
 
 #: modules/launcher/services/M3Variants.qml
-msgid ""
-"Matches the seed colour, even if the seed colour is very bright (high "
-"chroma)."
-msgstr ""
-"Coincide con el color de la semilla, incluso si el color de la semilla es "
-"muy brillante (croma alto)."
+msgid "Matches the seed colour, even if the seed colour is very bright (high chroma)."
+msgstr "Coincide con el color de la semilla, incluso si el color de la semilla es muy brillante (croma alto)."
 
 #: modules/launcher/services/M3Variants.qml
 msgctxt "M3 scheme variant name"
@@ -666,8 +653,7 @@ msgstr "Ensalada de frutas"
 
 #: modules/launcher/services/M3Variants.qml
 msgid "A playful theme - the seed colour's hue does not appear in the theme."
-msgstr ""
-"Un tema divertido: el tono del color de la semilla no aparece en el tema."
+msgstr "Un tema divertido: el tono del color de la semilla no aparece en el tema."
 
 #: modules/launcher/services/M3Variants.qml
 msgctxt "M3 scheme variant name"
@@ -723,16 +709,13 @@ msgstr "ERROR DE CONFIGURACIÓN: %1"
 #: modules/lock/center/StateMessage.qml
 #, qt-format
 msgid "Fingerprint not recognised (%1/%2). Please try again or use password."
-msgstr ""
-"Huella digital no reconocida (%1/%2). Inténtelo de nuevo o utilice la "
-"contraseña."
+msgstr "Huella digital no reconocida (%1/%2). Inténtelo de nuevo o utilice la contraseña."
 
 #. TRANSLATORS: %1 = attempts used so far, %2 = maximum attempts allowed
 #: modules/lock/center/StateMessage.qml
 #, qt-format
 msgid "Face not recognised (%1/%2). Please try again or use password."
-msgstr ""
-"Cara no reconocida (%1/%2). Inténtelo de nuevo o utilice la contraseña."
+msgstr "Cara no reconocida (%1/%2). Inténtelo de nuevo o utilice la contraseña."
 
 #. TRANSLATORS: %1 = attempts used so far, %2 = maximum attempts allowed
 #: modules/lock/center/StateMessage.qml
@@ -760,20 +743,15 @@ msgstr "Contraseña incorrecta. Inténtalo de nuevo."
 
 #: modules/lock/center/StateMessage.qml
 msgid "Maximum password attempts reached. Please use fingerprint."
-msgstr ""
-"Se alcanzó el número máximo de intentos de contraseña. Utilice la huella "
-"digital."
+msgstr "Se alcanzó el número máximo de intentos de contraseña. Utilice la huella digital."
 
 #: modules/lock/center/StateMessage.qml
 msgid "Maximum password attempts reached. Please use face."
-msgstr ""
-"Se alcanzó el número máximo de intentos de contraseña. Por favor usa la cara."
+msgstr "Se alcanzó el número máximo de intentos de contraseña. Por favor usa la cara."
 
 #: modules/lock/center/StateMessage.qml
 msgid "Maximum attempts for all authentication methods reached."
-msgstr ""
-"Se alcanzó el número máximo de intentos para todos los métodos de "
-"autenticación."
+msgstr "Se alcanzó el número máximo de intentos para todos los métodos de autenticación."
 
 #: modules/lock/center/StateMessage.qml
 msgid "Maximum password attempts reached."
@@ -781,9 +759,7 @@ msgstr "Se alcanzó el número máximo de intentos de contraseña."
 
 #: modules/lock/center/StateMessage.qml
 msgid "Maximum fingerprint attempts reached. Please use password."
-msgstr ""
-"Se alcanzó el número máximo de intentos de huellas dactilares. Por favor use "
-"contraseña."
+msgstr "Se alcanzó el número máximo de intentos de huellas dactilares. Por favor use contraseña."
 
 #: modules/lock/center/StateMessage.qml
 msgid "Maximum face attempts reached. Please use password."
@@ -1068,9 +1044,7 @@ msgstr "Idioma y región"
 
 #: modules/nexus/PageRegistry.qml
 msgid "UI language, weather location, display units"
-msgstr ""
-"Idioma de la interfaz de usuario, ubicación meteorológica, unidades de "
-"visualización"
+msgstr "Idioma de la interfaz de usuario, ubicación meteorológica, unidades de visualización"
 
 #: modules/nexus/PageRegistry.qml modules/nexus/pages/AboutPage.qml
 msgid "About"
@@ -1144,9 +1118,7 @@ msgstr "Favorito"
 
 #: modules/nexus/pages/apps/AppInfo.qml
 msgid "Matched by a regex in favouriteApps — edit the config file to change"
-msgstr ""
-"Coincide con una expresión regular en aplicaciones favoritas: edite el "
-"archivo de configuración para cambiar"
+msgstr "Coincide con una expresión regular en aplicaciones favoritas: edite el archivo de configuración para cambiar"
 
 #: modules/nexus/pages/apps/AppInfo.qml
 msgid "Pin to the top of the launcher"
@@ -1158,9 +1130,7 @@ msgstr "Oculto"
 
 #: modules/nexus/pages/apps/AppInfo.qml
 msgid "Matched by a regex in hiddenApps — edit the config file to change"
-msgstr ""
-"Coincide con una expresión regular en HiddenApps: edite el archivo de "
-"configuración para cambiar"
+msgstr "Coincide con una expresión regular en HiddenApps: edite el archivo de configuración para cambiar"
 
 #: modules/nexus/pages/apps/AppInfo.qml
 msgid "Hide from the launcher"
@@ -1217,9 +1187,7 @@ msgstr "Volúmenes de aplicaciones"
 
 #: modules/nexus/pages/audio/AppVolumes.qml
 msgid "Adjust the volume of individual apps currently playing audio."
-msgstr ""
-"Ajuste el volumen de las aplicaciones individuales que actualmente "
-"reproducen audio."
+msgstr "Ajuste el volumen de las aplicaciones individuales que actualmente reproducen audio."
 
 #: modules/nexus/pages/audio/AppVolumes.qml modules/nexus/pages/AudioPage.qml
 msgid "No apps playing audio"
@@ -1496,8 +1464,7 @@ msgstr "Agregar red"
 
 #: modules/nexus/pages/network/AddNetworkPage.qml
 msgid "Enter the details below to manually connect to a network."
-msgstr ""
-"Ingrese los detalles a continuación para conectarse manualmente a una red."
+msgstr "Ingrese los detalles a continuación para conectarse manualmente a una red."
 
 #. TRANSLATORS: SSID is a protocol term, leave it untranslated
 #: modules/nexus/pages/network/AddNetworkPage.qml
@@ -1559,13 +1526,8 @@ msgstr "Agregar proveedor de VPN"
 
 #. TRANSLATORS: the four names in brackets are provider identifiers, leave them untranslated
 #: modules/nexus/pages/network/AddVpnPage.qml
-msgid ""
-"Built-in names (wireguard, warp, tailscale, netbird) auto-fill their "
-"commands. For others, provide the connect/disconnect commands."
-msgstr ""
-"Los nombres integrados (wireguard, warp, tailscale, netbird) completan "
-"automáticamente sus comandos. Para otros, proporcione los comandos de "
-"conexión/desconexión."
+msgid "Built-in names (wireguard, warp, tailscale, netbird) auto-fill their commands. For others, provide the connect/disconnect commands."
+msgstr "Los nombres integrados (wireguard, warp, tailscale, netbird) completan automáticamente sus comandos. Para otros, proporcione los comandos de conexión/desconexión."
 
 #: modules/nexus/pages/network/AddVpnPage.qml
 msgid "Provider name"
@@ -1949,9 +1911,7 @@ msgstr "Acciones de desplazamiento"
 
 #: modules/nexus/pages/panels/TaskbarPanel.qml
 msgid "Scroll over the workspace indicator to switch workspaces"
-msgstr ""
-"Desplácese sobre el indicador del espacio de trabajo para cambiar de espacio "
-"de trabajo"
+msgstr "Desplácese sobre el indicador del espacio de trabajo para cambiar de espacio de trabajo"
 
 #: modules/nexus/pages/panels/TaskbarPanel.qml
 msgid "Volume"
@@ -2147,8 +2107,7 @@ msgstr "Volver a escanear Wi-Fi"
 
 #: modules/nexus/pages/ServicesPage.qml
 msgid "How often available networks are rescanned (seconds)"
-msgstr ""
-"Con qué frecuencia se vuelven a escanear las redes disponibles (segundos)"
+msgstr "Con qué frecuencia se vuelven a escanear las redes disponibles (segundos)"
 
 #: modules/nexus/pages/ServicesPage.qml
 msgid "Media & lyrics"
@@ -2283,20 +2242,12 @@ msgid "MiDnight is no longer maintained"
 msgstr "MiDnight ya no se mantiene"
 
 #: modules/UnmaintainedNotice.qml
-msgid ""
-"Development of MiDnight has been discontinued. The author has moved on to a "
-"new project, Kiite, which you can find at:"
-msgstr ""
-"El desarrollo de MiDnight ha sido descontinuado. El autor ha pasado a un "
-"nuevo proyecto, Kiite, que puedes encontrar en:"
+msgid "Development of MiDnight has been discontinued. The author has moved on to a new project, Kiite, which you can find at:"
+msgstr "El desarrollo de MiDnight ha sido descontinuado. El autor ha pasado a un nuevo proyecto, Kiite, que puedes encontrar en:"
 
 #: modules/UnmaintainedNotice.qml
-msgid ""
-"Please do not recommend MiDnight to other Caelestia users. If they ask for "
-"alternatives, point them to maintained projects instead."
-msgstr ""
-"No recomiende MiDnight a otros usuarios de Caelestia. Si piden alternativas, "
-"indíqueles proyectos mantenidos."
+msgid "Please do not recommend MiDnight to other Caelestia users. If they ask for alternatives, point them to maintained projects instead."
+msgstr "No recomiende MiDnight a otros usuarios de Caelestia. Si piden alternativas, indíqueles proyectos mantenidos."
 
 #: modules/UnmaintainedNotice.qml
 msgid "Don't remind me again"
@@ -3369,3 +3320,103 @@ msgstr "Ajustes"
 #: plugin/src/Caelestia/Config/launcherconfig.hpp
 msgid "Configure the shell"
 msgstr "Configurar el caparazón"
+
+#: modules/nexus/pages/UpdatesPage.qml
+msgid "Unable to read the update list."
+msgstr "No se pudo leer la lista de actualizaciones."
+
+#: modules/nexus/pages/UpdatesPage.qml
+msgid "Unable to check for updates. Try again."
+msgstr "No se pudo buscar actualizaciones. Inténtalo de nuevo."
+
+#: modules/nexus/pages/UpdatesPage.qml
+msgid "Checking repository and AUR updates…"
+msgstr "Buscando actualizaciones en repositorios y AUR…"
+
+#: modules/nexus/pages/UpdatesPage.qml
+msgid "Some update sources could not be checked."
+msgstr "No se pudieron consultar algunas fuentes de actualizaciones."
+
+#: modules/nexus/pages/UpdatesPage.qml
+msgid "Check for available updates."
+msgstr "Consulta las actualizaciones disponibles."
+
+#: modules/nexus/pages/UpdatesPage.qml
+msgid "The system is up to date."
+msgstr "El sistema está actualizado."
+
+#: modules/nexus/pages/UpdatesPage.qml
+#, qt-plural-format
+msgid "%n package available to update"
+msgid_plural "%n packages available to update"
+msgstr[0] "%n paquete disponible para actualizar"
+msgstr[1] "%n paquetes disponibles para actualizar"
+
+#: modules/nexus/pages/UpdatesPage.qml
+msgid "Checking…"
+msgstr "Consultando…"
+
+#: modules/nexus/pages/UpdatesPage.qml
+msgid "Check for updates"
+msgstr "Buscar actualizaciones"
+
+#: modules/nexus/pages/UpdatesPage.qml
+msgid "Preview updates on Arch Linux using checkupdates. AUR packages are included when paru or yay is installed. This page does not install packages."
+msgstr "Consulta las actualizaciones de Arch Linux mediante checkupdates. Se incluyen los paquetes de AUR si paru o yay está instalado. Esta página no instala paquetes."
+
+#: modules/nexus/pages/UpdatesPage.qml
+msgid "Repository"
+msgstr "Repositorio"
+
+#: modules/nexus/pages/LanguageAndRegion.qml
+msgid "Current location"
+msgstr "Ubicación actual"
+
+#: modules/nexus/pages/LanguageAndRegion.qml
+msgid "Automatic"
+msgstr "Automática"
+
+#: modules/nexus/pages/LanguageAndRegion.qml
+msgid "This location is used for the weather forecast."
+msgstr "Esta ubicación se usa para el pronóstico del clima."
+
+#: modules/nexus/pages/LanguageAndRegion.qml
+msgid "Automatic location (IP)"
+msgstr "Ubicación automática (IP)"
+
+#: modules/nexus/pages/LanguageAndRegion.qml
+msgid "City name…"
+msgstr "Nombre de la ciudad…"
+
+#: modules/nexus/pages/LanguageAndRegion.qml
+msgid "Searching…"
+msgstr "Buscando…"
+
+#: modules/nexus/pages/LanguageAndRegion.qml
+msgid "Search"
+msgstr "Buscar"
+
+#: modules/nexus/pages/LanguageAndRegion.qml
+msgid "Select this city"
+msgstr "Elegir esta ciudad"
+
+#: services/LocationSearch.qml
+msgid "Enter at least two characters."
+msgstr "Escribe al menos dos caracteres."
+
+#: services/LocationSearch.qml
+msgid "No matching cities. Try another name."
+msgstr "No se encontraron ciudades. Prueba con otro nombre."
+
+#: services/LocationSearch.qml
+msgid "The city search returned an invalid response."
+msgstr "La búsqueda devolvió una respuesta no válida."
+
+#: services/LocationSearch.qml
+msgid "Unable to search for cities. Check your connection and try again."
+msgstr "No se pudieron buscar ciudades. Revisa la conexión e inténtalo de nuevo."
+
+#: modules/nexus/pages/hyprland/HyprKeybindsPage.qml
+#: modules/nexus/pages/hyprland/HyprVariablesPage.qml
+msgid "Code editor"
+msgstr "Editor de Código"

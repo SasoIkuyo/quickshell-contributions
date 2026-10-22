@@ -93,7 +93,12 @@ PageBase {
                 value: ""
             }
 
-            MenuItem { id: englishLang; text: "English"; value: "en" }
+            MenuItem {
+                id: englishLang
+
+                text: "English"
+                value: "en"
+            }
 
             Variants {
                 id: langItems
