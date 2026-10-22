@@ -153,15 +153,13 @@ Item {
 
                 // Keep decorative animation at 30 fps even on high-refresh displays.
                 Timer {
-                    property double previousTick: 0
+                    property ElapsedTimer frameClock: ElapsedTimer {}
                     interval: 33
                     repeat: true
                     running: root.opacity > 0 && !bars.settled
-                    onRunningChanged: previousTick = Date.now()
+                    onRunningChanged: frameClock.restart()
                     onTriggered: {
-                        const now = Date.now();
-                        bars.advance(Math.min(0.1, (now - previousTick) / 1000));
-                        previousTick = now;
+                        bars.advance(Math.min(0.1, frameClock.restart()));
                         if (root.rendererGpu) {
                             dataCanvas.requestPaint();
                         }
