@@ -113,7 +113,7 @@ PageBase {
         StyledText {
             Layout.fillWidth: true
             Layout.topMargin: Tokens.spacing.large - parent.spacing
-            text: Tr.tr("Sound effects")
+            text: qsTr("Sound effects")
             font: Tokens.font.body.small
             color: Colours.palette.m3primary
         }
@@ -121,7 +121,7 @@ PageBase {
         ToggleRow {
             Layout.fillWidth: true
             first: true
-            text: Tr.tr("Enable sound effects")
+            text: qsTr("Enable sound effects")
             checked: GlobalConfig.audio.sounds.enabled
             onToggled: GlobalConfig.audio.sounds.enabled = checked
         }
@@ -129,7 +129,7 @@ PageBase {
         SliderRow {
             Layout.fillWidth: true
             icon: "volume_up"
-            label: Tr.tr("SFX Volume")
+            label: qsTr("SFX Volume")
             valueLabel: Math.round(value * 100) + "%"
             value: GlobalConfig.audio.sounds.sfxVolume
             enabled: GlobalConfig.audio.sounds.enabled
@@ -140,7 +140,7 @@ PageBase {
         SliderRow {
             Layout.fillWidth: true
             icon: "notifications"
-            label: Tr.tr("Notification Volume")
+            label: qsTr("Notification Volume")
             valueLabel: Math.round(value * 100) + "%"
             value: GlobalConfig.audio.sounds.notificationVolume
             enabled: GlobalConfig.audio.sounds.enabled
@@ -150,7 +150,7 @@ PageBase {
 
         ToggleRow {
             Layout.fillWidth: true
-            text: Tr.tr("Camera click")
+            text: qsTr("Camera click")
             checked: GlobalConfig.audio.sounds.cameraClick
             enabled: GlobalConfig.audio.sounds.enabled
             onToggled: GlobalConfig.audio.sounds.cameraClick = checked
@@ -158,7 +158,7 @@ PageBase {
 
         ToggleRow {
             Layout.fillWidth: true
-            text: Tr.tr("Charging started")
+            text: qsTr("Charging started")
             checked: GlobalConfig.audio.sounds.chargingStarted
             enabled: GlobalConfig.audio.sounds.enabled
             onToggled: GlobalConfig.audio.sounds.chargingStarted = checked
@@ -166,7 +166,7 @@ PageBase {
 
         ToggleRow {
             Layout.fillWidth: true
-            text: Tr.tr("Volume tick")
+            text: qsTr("Volume tick")
             checked: GlobalConfig.audio.sounds.effectTick
             enabled: GlobalConfig.audio.sounds.enabled
             onToggled: GlobalConfig.audio.sounds.effectTick = checked
@@ -174,7 +174,7 @@ PageBase {
 
         ToggleRow {
             Layout.fillWidth: true
-            text: Tr.tr("Screen lock")
+            text: qsTr("Screen lock")
             checked: GlobalConfig.audio.sounds.lock
             enabled: GlobalConfig.audio.sounds.enabled
             onToggled: GlobalConfig.audio.sounds.lock = checked
@@ -182,7 +182,7 @@ PageBase {
 
         ToggleRow {
             Layout.fillWidth: true
-            text: Tr.tr("Screen unlock")
+            text: qsTr("Screen unlock")
             checked: GlobalConfig.audio.sounds.unlock
             enabled: GlobalConfig.audio.sounds.enabled
             onToggled: GlobalConfig.audio.sounds.unlock = checked
@@ -190,7 +190,7 @@ PageBase {
 
         ToggleRow {
             Layout.fillWidth: true
-            text: Tr.tr("Low battery")
+            text: qsTr("Low battery")
             checked: GlobalConfig.audio.sounds.lowBattery
             enabled: GlobalConfig.audio.sounds.enabled
             onToggled: GlobalConfig.audio.sounds.lowBattery = checked
@@ -199,7 +199,7 @@ PageBase {
         ToggleRow {
             Layout.fillWidth: true
             last: true
-            text: Tr.tr("Screen record")
+            text: qsTr("Screen record")
             checked: GlobalConfig.audio.sounds.screenRecord
             enabled: GlobalConfig.audio.sounds.enabled
             onToggled: GlobalConfig.audio.sounds.screenRecord = checked
@@ -209,7 +209,7 @@ PageBase {
         StyledText {
             Layout.fillWidth: true
             Layout.topMargin: Tokens.spacing.large - parent.spacing
-            text: Tr.tr("Notification silencing")
+            text: qsTr("Notification silencing")
             font: Tokens.font.body.small
             color: Colours.palette.m3primary
         }
@@ -218,7 +218,7 @@ PageBase {
             Layout.fillWidth: true
             Layout.leftMargin: Tokens.padding.small
             Layout.bottomMargin: Tokens.spacing.medium
-            text: Tr.tr("Mute notification sounds for specific apps")
+            text: qsTr("Mute notification sounds for specific apps")
             color: Colours.palette.m3outline
             font: Tokens.font.body.small
             wrapMode: Text.WordWrap
@@ -236,7 +236,7 @@ PageBase {
             }
 
             IconTextButton {
-                text: Tr.tr("Add")
+                text: qsTr("Add")
                 icon: "add"
                 onClicked: root.addApp()
             }

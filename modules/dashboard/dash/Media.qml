@@ -81,7 +81,7 @@ Item {
 
         animate: true
         horizontalAlignment: Text.AlignHCenter
-        text: Players.getTitle(Players.active) || (Players.active ? Tr.tr("Unknown title") : Tr.tr("No media"))
+        text: (Players.active?.trackTitle ?? Tr.tr("No media")) || Tr.tr("Unknown title")
         color: Colours.palette.m3primary
         font: Tokens.font.title.small
 
@@ -98,7 +98,7 @@ Item {
 
         animate: true
         horizontalAlignment: Text.AlignHCenter
-        text: Players.getAlbum(Players.active) || (Players.active ? Tr.tr("Unknown album") : Tr.tr("No media"))
+        text: (Players.active?.trackAlbum ?? Tr.tr("No media")) || Tr.tr("Unknown album")
         color: Colours.palette.m3outline
         font: Tokens.font.body.small
 
@@ -115,7 +115,7 @@ Item {
 
         animate: true
         horizontalAlignment: Text.AlignHCenter
-        text: Players.getArtist(Players.active) || (Players.active ? Tr.tr("Unknown artist") : Tr.tr("No media"))
+        text: (Players.active?.trackArtist ?? Tr.tr("No media")) || Tr.tr("Unknown artist")
         color: Colours.palette.m3secondary
 
         width: parent.implicitWidth - Tokens.padding.extraLargeIncreased
