@@ -5,7 +5,6 @@ import QtQuick.Effects
 import Quickshell
 import Caelestia.Components
 import Caelestia.Config
-import Caelestia.State
 import Caelestia.Services
 import qs.components
 import qs.services
@@ -16,7 +15,7 @@ Item {
     required property ShellScreen screen
     required property Item wallpaper
 
-    readonly property bool shouldBeActive: Config.background.visualiser.enabled && !(RuntimeState.gameMode && GlobalConfig.utilities.gameMode.disableVisualizer) && (!Config.background.visualiser.autoHide || (Hypr.monitorFor(screen)?.activeWorkspace?.toplevels?.values.every(t => t.lastIpcObject?.floating) ?? true))
+    readonly property bool shouldBeActive: Config.background.visualiser.enabled && !(GameMode.enabled && GlobalConfig.utilities.gameMode.disableVisualizer) && (!Config.background.visualiser.autoHide || (Hypr.monitorFor(screen)?.activeWorkspace?.toplevels?.values.every(t => t.lastIpcObject?.floating) ?? true))
     property real offset: shouldBeActive ? 0 : screen.height * 0.2
 
     readonly property int barExclusiveZone: Visibilities.bars.get(root.screen.name)?.exclusiveZone ?? (Tokens.sizes.bar.innerWidth + Math.max(Tokens.padding.small, Config.border.thickness))
@@ -47,7 +46,7 @@ Item {
         id: wrapper
 
         anchors.fill: parent
-        layer.enabled: true
+        layer.enabled: root.opacity > 0 && Config.background.visualiser.blur
 
         Loader {
             asynchronous: true
@@ -151,11 +150,18 @@ Item {
                     fragmentShader: "qrc:/shaders/visualiser.frag.qsb"
                 }
 
-                FrameAnimation {
+                // Keep decorative animation at 30 fps even on high-refresh displays.
+                Timer {
+                    property double previousTick: 0
+                    interval: 33
+                    repeat: true
                     running: root.opacity > 0 && !bars.settled
+                    onRunningChanged: previousTick = Date.now()
                     onTriggered: {
-                        bars.advance(frameTime);
-                        if (!root.rendererGpu) {
+                        const now = Date.now();
+                        bars.advance(Math.min(0.1, (now - previousTick) / 1000));
+                        previousTick = now;
+                        if (root.rendererGpu) {
                             dataCanvas.requestPaint();
                         }
                     }

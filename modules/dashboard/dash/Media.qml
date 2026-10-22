@@ -33,7 +33,7 @@ Item {
     }
 
     Timer {
-        running: Players.active?.isPlaying ?? false
+        running: root.visible && (Players.active?.isPlaying ?? false)
         interval: GlobalConfig.dashboard.mediaUpdateInterval
         triggeredOnStart: true
         repeat: true
@@ -41,7 +41,7 @@ Item {
     }
 
     ServiceRef {
-        service: Audio.beatTracker
+        service: root.visible ? Audio.beatTracker : null
     }
 
     CircularProgress {
@@ -81,7 +81,7 @@ Item {
 
         animate: true
         horizontalAlignment: Text.AlignHCenter
-        text: (Players.active?.trackTitle ?? Tr.tr("No media")) || Tr.tr("Unknown title")
+        text: Players.getTitle(Players.active) || (Players.active ? Tr.tr("Unknown title") : Tr.tr("No media"))
         color: Colours.palette.m3primary
         font: Tokens.font.title.small
 
@@ -98,7 +98,7 @@ Item {
 
         animate: true
         horizontalAlignment: Text.AlignHCenter
-        text: (Players.active?.trackAlbum ?? Tr.tr("No media")) || Tr.tr("Unknown album")
+        text: Players.getAlbum(Players.active) || (Players.active ? Tr.tr("Unknown album") : Tr.tr("No media"))
         color: Colours.palette.m3outline
         font: Tokens.font.body.small
 
@@ -115,7 +115,7 @@ Item {
 
         animate: true
         horizontalAlignment: Text.AlignHCenter
-        text: (Players.active?.trackArtist ?? Tr.tr("No media")) || Tr.tr("Unknown artist")
+        text: Players.getArtist(Players.active) || (Players.active ? Tr.tr("Unknown artist") : Tr.tr("No media"))
         color: Colours.palette.m3secondary
 
         width: parent.implicitWidth - Tokens.padding.extraLargeIncreased
