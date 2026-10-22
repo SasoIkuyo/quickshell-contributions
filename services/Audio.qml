@@ -18,7 +18,7 @@ Singleton {
     property alias hiddenDevices: devicePreferences.hiddenDevices
 
     function deviceKey(node): string {
-        return node ? (node.isSink ? "output:" : "input:") + node.name : "";
+        return node?.name ? (node.isSink ? "output:" : "input:") + node.name : "";
     }
 
     function isDeviceHidden(node): bool {

@@ -20,6 +20,9 @@ ColumnLayout {
     implicitWidth: Math.max(300, _isSidebarOpen ? Tokens.sizes.sidebar.width - Tokens.padding.extraLargeIncreased : 0)
     spacing: Tokens.spacing.medium
 
+    ButtonGroup { id: sinks }
+    ButtonGroup { id: sources }
+
     IconTextButton {
         Layout.fillWidth: true
         text: Audio.showHiddenDevices ? Tr.tr("Stop showing hidden devices") : Tr.tr("Show hidden devices")
@@ -64,11 +67,13 @@ ColumnLayout {
                     Layout.fillWidth: true
                     StyledRadioButton {
                         Layout.fillWidth: true
+                        ButtonGroup.group: sinks
                         checked: Audio.sink?.id === outputControl.modelData.id
                         onClicked: Audio.setAudioSink(outputControl.modelData)
                         text: outputControl.modelData.description
                     }
                     IconTextButton {
+                        enabled: !!outputControl.modelData.name
                         text: Audio.isDeviceHidden(outputControl.modelData) ? Tr.tr("Show") : Tr.tr("Hide")
                         icon: Audio.isDeviceHidden(outputControl.modelData) ? "visibility" : "visibility_off"
                         onClicked: Audio.toggleDeviceHidden(outputControl.modelData)
@@ -108,11 +113,13 @@ ColumnLayout {
                     Layout.fillWidth: true
                     StyledRadioButton {
                         Layout.fillWidth: true
+                        ButtonGroup.group: sources
                         checked: Audio.source?.id === inputControl.modelData.id
                         onClicked: Audio.setAudioSource(inputControl.modelData)
                         text: inputControl.modelData.description
                     }
                     IconTextButton {
+                        enabled: !!inputControl.modelData.name
                         text: Audio.isDeviceHidden(inputControl.modelData) ? Tr.tr("Show") : Tr.tr("Hide")
                         icon: Audio.isDeviceHidden(inputControl.modelData) ? "visibility" : "visibility_off"
                         onClicked: Audio.toggleDeviceHidden(inputControl.modelData)

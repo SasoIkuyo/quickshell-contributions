@@ -63,3 +63,14 @@ test('cycling outputs skips hidden devices and tolerates all devices hidden', ()
     assert.equal(selected, undefined);
 });
 
+
+test('unnamed or missing audio nodes do not create persisted hidden entries', () => {
+    let writes = 0;
+    const audio = loadMethods('services/Audio.qml', ['deviceKey', 'isDeviceHidden', 'toggleDeviceHidden'], {
+        hiddenDevices: [], deviceStore: { writeAdapter() { writes++; } }
+    });
+    audio.toggleDeviceHidden(null);
+    audio.toggleDeviceHidden({ isSink: true, name: '' });
+    assert.equal(writes, 0);
+    assert.equal(audio.hiddenDevices.length, 0);
+});

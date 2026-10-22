@@ -83,6 +83,7 @@ ItemList {
             }
 
             IconTextButton {
+                enabled: !!device.modelData.name
                 text: Audio.isDeviceHidden(device.modelData) ? Tr.tr("Show") : Tr.tr("Hide")
                 icon: Audio.isDeviceHidden(device.modelData) ? "visibility" : "visibility_off"
                 onClicked: Audio.toggleDeviceHidden(device.modelData)
